@@ -30,6 +30,7 @@ if args.motif:
     if re.search(args.motif, args.seq):
         print("AAA")
     else:
-        print("No motif")
+        print("No motif  oh")
+
 
 
