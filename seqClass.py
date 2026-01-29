@@ -6,23 +6,23 @@ from argparse import ArgumentParser
 parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA')
 parser.add_argument("-s", "--seq", type = str, required = True, help = "Input sequence")
 parser.add_argument("-m", "--motif", type = str, required = False, help = "Motif")
+
 if len(sys.argv) == 1:
     parser.print_help()
     sys.exit(1)
 
 args = parser.parse_args()
-
 args.seq = args.seq.upper()#Converts the sequence to uppercase to ensure case insensitivity
 
-if re.search('^[ACGTU]+$', args.seq): #The sequence is being analyzed to classify it
-    if re.search('T', args.seq):
+if re.search('^[ACGT]+$', args.seq): #The sequence is being analyzed to classify it
         print ('The sequence is DNA')
-    elif re.search('U', args.seq):
+    elif re.search('^[ACGU]+$', args.seq):
         print ('The sequence is RNA')
     else:
-        print ('The sequence can be DNA or RNA')
-else:
-    print ('Error not DNA or RNA')
+        print ('Error: the sequence is not valid DNA or RNA sequence')
+	print ('Error not DNA or RNA')
+
+#Search a motif 
 
 if args.motif:
     args.motif = args.motif.upper()
