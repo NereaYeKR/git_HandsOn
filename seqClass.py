@@ -14,7 +14,6 @@ if len(sys.argv) == 1:
 args = parser.parse_args()
 args.seq = args.seq.upper()  # Converts the sequence to uppercase to ensure case insensitivity
 
-# Fixed indentation - all at same level (4 spaces)
 if re.search('^[ACGT]+$', args.seq):  # Check if it's DNA
     print('The sequence is DNA')
 elif re.search('^[ACGU]+$', args.seq):  # Check if it's RNA
