@@ -21,9 +21,7 @@ if re.search('^[ACGTU]+$', args.seq):
     elif re.search('U', args.seq):
         print ('The sequence is RNA')
     else:
-        print ('The sequence can be DNA or RNA')
-else:
-    print ('The sequence is not DNA nor RNA')
+   	print ('The sequence is not DNA or RNA')
 
 if args.motif:
     args.motif = args.motif.upper()
