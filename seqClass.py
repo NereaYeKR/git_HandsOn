@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+X#!/usr/bin/env python
 
 import sys, re
 from argparse import ArgumentParser
@@ -12,9 +12,9 @@ if len(sys.argv) == 1:
 
 args = parser.parse_args()
 
-args.seq = args.seq.upper()
+args.seq = args.seq.upper()#Converts the sequence to uppercase to ensure case insensitivity
 
-if re.search('^[ACGTU]+$', args.seq):
+if re.search('^[ACGTU]+$', args.seq): #The sequence is being analyzed to classify it
     if re.search('T', args.seq):
         print ('The sequence is DNA')
     elif re.search('U', args.seq):
@@ -28,9 +28,10 @@ if args.motif:
     args.motif = args.motif.upper()
     print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
     if re.search(args.motif, args.seq):
-        print("AAA")
+        print("Motif found in sequence")
     else:
-        print("No motif  oh")
+        print("Motif not found in sequence")
+
 
 
 
