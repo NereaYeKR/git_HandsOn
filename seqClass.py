@@ -24,6 +24,13 @@ else:
 
 #Calculate the percentage of each nucleotide 
 
+total_length = len(args.seq)
+
+for nuc in ['A', 'C', 'G', 'T', 'U']:
+    count = args.seq.count(nuc)
+    if total_length > 0:
+        percentage = (count / total_length) * 100
+        print(f"{nuc}: {percentage:.2f}%")
 
 #Search for a motif
 
