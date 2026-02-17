@@ -22,6 +22,9 @@ elif re.search('^[ACGU]+$', args.seq):  # Check if it's RNA
 else: 
     print('The sequence is not DNA or RNA')
 
+#Calculate the percentage of each nucleotide 
+
+
 #Search for a motif
 
 if args.motif:
